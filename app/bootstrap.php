@@ -3,7 +3,19 @@ declare(strict_types=1);
 
 define('APP_ROOT', dirname(__DIR__));
 define('DATA_DIR', APP_ROOT . '/data');
-define('DB_PATH', DATA_DIR . '/sipka.sqlite');
+
+// Deteksi lingkungan Vercel serverless (hanya folder /tmp yang bisa ditulis)
+if (getenv('VERCEL') || getenv('AWS_LAMBDA_FUNCTION_NAME')) {
+    $tmpDb = sys_get_temp_dir() . '/sipka.sqlite';
+    if (!file_exists($tmpDb) && file_exists(DATA_DIR . '/sipka.sqlite')) {
+        copy(DATA_DIR . '/sipka.sqlite', $tmpDb);
+    }
+    define('DB_PATH', $tmpDb);
+    ini_set('session.save_path', sys_get_temp_dir());
+} else {
+    define('DB_PATH', DATA_DIR . '/sipka.sqlite');
+}
+
 define('APP_NAME', 'SIPKA');
 define('APP_FULLNAME', 'Sistem Informasi Penilaian Kinerja Anggaran');
 
