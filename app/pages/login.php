@@ -36,18 +36,26 @@ $demo = [
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Masuk · <?= APP_NAME ?></title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+    <link rel="stylesheet" href="https://unpkg.com/@idds/js@latest/dist/style.css">
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body class="login-page">
 <div class="login-wrap">
     <section class="login-hero">
-        <div class="logo big">S</div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:16px;">
+            <div class="idds-flag-bar" style="height:32px;"></div>
+            <span class="idds-badge-gov" style="font-size:11px;">INA DIGITAL · SPBE</span>
+        </div>
         <h1><?= APP_NAME ?></h1>
-        <p><?= h(APP_FULLNAME) ?><br>Reward &amp; Punishment Satuan Kerja dan Unit Kerja</p>
+        <p><?= h(APP_FULLNAME) ?><br>Lembaga Administrasi Negara Republik Indonesia</p>
         <ul>
-            <li>Bobot &amp; indikator dinamis per tahun</li>
-            <li>Input kolaboratif oleh unit pengampu</li>
-            <li>Peringkat, predikat, dan rekomendasi otomatis</li>
+            <li>Penilaian kinerja anggaran Satker &amp; Unit Organisasi</li>
+            <li>Standar Desain INA Digital Design System (IDDS)</li>
+            <li>Bobot &amp; indikator dinamis per tahun anggaran</li>
+            <li>Penetapan kategori Reward &amp; Punishment otomatis</li>
+        </ul>
+    </section>
             <li>Verifikasi, sanggahan, dan penguncian hasil</li>
         </ul>
     </section>
