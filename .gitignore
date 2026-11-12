@@ -1,0 +1,15 @@
+# Environment & System files
+.DS_Store
+Thumbs.db
+*.log
+
+# Workspace scratch / temp
+scratch/
+test_*.php
+*.tmp
+*.zip
+*.bak
+
+# Data SQLite (optional: jika ingin database dibuat fresh saat instalasi)
+# data/*.sqlite-journal
+# data/*.sqlite-wal
